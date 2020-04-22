@@ -1,0 +1,30 @@
+<div class="container">
+  <h3>Product List</h3>
+
+  <ul class="pager">
+    <% @letters.each do |letter| %>
+      <li><%= link_to letter.char.upcase, letter_path(id: letter.char), class: ("active" if params[:id] == letter.char)  %></li>
+    <% end %>
+  </ul>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= number_to_currency product.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

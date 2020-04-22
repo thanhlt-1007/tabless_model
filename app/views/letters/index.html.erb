@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>Letter List</h3>
+
+  <ul class="pager">
+    <% @letters.each do |letter| %>
+      <li><%= link_to letter.char.upcase, letter_path(id: letter.char) %></li>
+    <% end %>
+  </ul>
+</div>

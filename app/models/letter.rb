@@ -5,7 +5,7 @@ class Letter
     end
 
     def find_by params
-      all.detect {|letter| letter.char == params[:char]&.downcase } || raise(ActiveRecord::RecordNotFound)
+      all.detect {|letter| letter.char == params[:char]&.downcase }
     end
   end
 
@@ -13,10 +13,6 @@ class Letter
 
   def initialize char
     @char = char
-  end
-
-  def to_params
-    char
   end
 
   def products
